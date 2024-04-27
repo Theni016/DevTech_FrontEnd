@@ -1,11 +1,12 @@
 import React from "react";
-import logo from "../assets/DevTech.svg";
+import logo from "../assets/DEV1.png";
+import "../components/HeaderComponent.css";
 
 const HeaderComponent = () => {
   return (
     <div>
-      <header>
-        <nav className="navbar navbar-dark bg-dark">
+      <header className="header">
+        <nav className="navbar navbar-dark bg-blueviolet">
           <a className="navbar-brand" href="https://github.com/Theni016">
             <img
               src={logo}
@@ -14,9 +15,9 @@ const HeaderComponent = () => {
               height="100"
               className="d-inline-block align-top"
               style={{
-                marginTop: "0px",
-                marginRight: "20px",
-                marginBottom: "0px",
+                marginTop: "-20px",
+                marginRight: "0px",
+                marginBottom: "-20px",
                 marginLeft: "20px",
               }}
             />

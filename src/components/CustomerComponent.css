@@ -1,0 +1,20 @@
+.cover {
+  background-color: #161b22;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.form-label {
+  color: white;
+}
+
+.card {
+  background-color: #212529;
+}
+
+.text-center {
+  color: white;
+  /* margin-top: 40px; */
+}
+
+/*///////*/

@@ -5,6 +5,7 @@ import {
   updateCustomer,
 } from "../services/CustomerService";
 import { useNavigate, useParams } from "react-router-dom";
+import "../components/CustomerComponent.css";
 const CustomerComponent = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -124,94 +125,114 @@ const CustomerComponent = () => {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="card">
-          {pageTitle()}
-          <div className="card-body">
-            <form>
-              <div className="form-group mb-2">
-                <label className="form-label">Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter customer name"
-                  name="name"
-                  value={name}
-                  className={`form-control ${errors.name ? "is-invalid" : ""}`}
-                  onChange={handleName}
-                ></input>
-                {errors.name && (
-                  <div className="invalid-feedback">{errors.name}</div>
-                )}
-              </div>
+    <div className="cover">
+      <div className="container">
+        <div className="row">
+          <div
+            className="card"
+            style={{
+              backgroundColor: "#212529",
+              marginTop: "30px",
+              marginBottom: "30px",
+            }}
+          >
+            {pageTitle()}
+            <div className="card-body d-flex flex-column justify-content-center py-3">
+              <form>
+                <div className="form-group mb-4">
+                  <label className="form-label">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={name}
+                    className={`form-control ${
+                      errors.name ? "is-invalid" : ""
+                    }`}
+                    onChange={handleName}
+                    style={{
+                      backgroundColor: "#0D1117",
+                      color: "#FFFFFF",
+                    }}
+                  ></input>
+                  {errors.name && (
+                    <div className="invalid-feedback">{errors.name}</div>
+                  )}
+                </div>
 
-              <div className="form-group mb-2">
-                <label className="form-label">Email Address</label>
-                <input
-                  type="text"
-                  placeholder="Enter customer email address"
-                  name="email"
-                  value={email}
-                  className={`form-control ${errors.email ? "is-invalid" : ""}`}
-                  onChange={handleEmail}
-                ></input>
-                {errors.email && (
-                  <div className="invalid-feedback">{errors.email}</div>
-                )}
-              </div>
+                <div className="form-group mb-4">
+                  <label className="form-label">Email Address</label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={email}
+                    className={`form-control ${
+                      errors.email ? "is-invalid" : ""
+                    }`}
+                    onChange={handleEmail}
+                    style={{ backgroundColor: "#0D1117", color: "#FFFFFF" }}
+                  ></input>
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
+                </div>
 
-              <div className="form-group mb-2">
-                <label className="form-label">Phone number</label>
-                <input
-                  type="text"
-                  placeholder="Enter customer phone number"
-                  name="phone"
-                  value={phone}
-                  className={`form-control ${errors.phone ? "is-invalid" : ""}`}
-                  onChange={handlePhone}
-                ></input>
-                {errors.phone && (
-                  <div className="invalid-feedback">{errors.phone}</div>
-                )}
-              </div>
+                <div className="form-group mb-4">
+                  <label className="form-label">Phone number</label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={phone}
+                    className={`form-control ${
+                      errors.phone ? "is-invalid" : ""
+                    }`}
+                    onChange={handlePhone}
+                    style={{ backgroundColor: "#0D1117", color: "#FFFFFF" }}
+                  ></input>
+                  {errors.phone && (
+                    <div className="invalid-feedback">{errors.phone}</div>
+                  )}
+                </div>
 
-              <div className="form-group mb-2">
-                <label className="form-label">Reason for Service</label>
-                <input
-                  type="text"
-                  placeholder="Enter customer issues"
-                  name="issue"
-                  value={issue}
-                  className={`form-control ${errors.issue ? "is-invalid" : ""}`}
-                  onChange={handleIssue}
-                ></input>
-                {errors.issue && (
-                  <div className="invalid-feedback">{errors.issue}</div>
-                )}
-              </div>
+                <div className="form-group mb-4">
+                  <label className="form-label">Reason for Service</label>
+                  <input
+                    type="text"
+                    name="issue"
+                    value={issue}
+                    className={`form-control ${
+                      errors.issue ? "is-invalid" : ""
+                    }`}
+                    onChange={handleIssue}
+                    style={{ backgroundColor: "#0D1117", color: "#FFFFFF" }}
+                  ></input>
+                  {errors.issue && (
+                    <div className="invalid-feedback">{errors.issue}</div>
+                  )}
+                </div>
 
-              <div className="form-group mb-2">
-                <label className="form-label">Delivery Status</label>
-                <select
-                  type="text"
-                  name="deliverystatus"
-                  value={deliverystatus}
-                  className="form-control"
-                  onChange={handleDeliverystatus}
+                <div className="form-group mb-4">
+                  <label className="form-label">Delivery Status</label>
+                  <select
+                    type="text"
+                    name="deliverystatus"
+                    value={deliverystatus}
+                    className="form-control"
+                    onChange={handleDeliverystatus}
+                    style={{ backgroundColor: "#0D1117", color: "#FFFFFF" }}
+                  >
+                    <option>PENDING</option>
+                    <option>DELIVERED</option>
+                  </select>
+                </div>
+
+                <button
+                  className="btn btn-outline-success"
+                  onClick={saveOrUpdateCustomer}
                 >
-                  <option>on progess</option>
-                  <option>delivered</option>
-                  <option>pending</option>
-                </select>
-              </div>
-
-              <button
-                className="btn btn-outline-success"
-                onClick={saveOrUpdateCustomer}
-              >
-                Submit
-              </button>
-            </form>
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
